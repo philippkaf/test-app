@@ -4,15 +4,8 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #0f172a;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: #0f172a;
-      --foreground: #f8fafc;
-    }
+    --background: #020c02;
+    --foreground: #00ff41;
   }
 
   html {
@@ -24,10 +17,49 @@
     background: var(--background);
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #020c02;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #00ff41;
+    border-radius: 3px;
+  }
+
+  /* Text cursor blink for inputs */
+  input {
+    caret-color: #00ff41;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .terminal-glow {
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.8), 0 0 20px rgba(0, 255, 65, 0.4);
+  }
+
+  .terminal-glow-sm {
+    text-shadow: 0 0 4px rgba(0, 255, 65, 0.6);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.2), inset 0 0 8px rgba(0, 255, 65, 0.05);
+  }
+
+  .scanlines {
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.08) 2px,
+      rgba(0, 0, 0, 0.08) 4px
+    );
   }
 }

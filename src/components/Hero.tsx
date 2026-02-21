@@ -2,57 +2,67 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-24 text-center">
-      {/* Background gradient */}
+    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-24 text-center scanlines">
+      {/* Background grid */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
-      >
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(14,165,233,0.15),transparent)]" />
-      </div>
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0,255,65,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,0.04) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+      {/* Radial vignette */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 50%, transparent 30%, #020c02 100%)",
+        }}
+      />
 
       {/* Badge */}
-      <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1.5 text-sm font-medium text-sky-700 dark:border-sky-800 dark:bg-sky-950 dark:text-sky-300">
-        <span className="size-1.5 rounded-full bg-sky-500" />
-        Now in public beta
+      <div className="mb-6 inline-flex items-center gap-2 rounded border border-terminal-green-muted bg-terminal-green-faint px-4 py-1.5 text-sm font-medium text-terminal-green terminal-glow-sm">
+        <span className="size-1.5 animate-pulse rounded-full bg-terminal-green" />
+        [STATUS: PUBLIC BETA]
       </div>
 
       {/* Headline */}
-      <h1 className="text-balance text-5xl font-extrabold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl">
-        Build faster,{" "}
-        <span className="bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-transparent">
-          ship better
-        </span>
+      <h1 className="text-balance text-5xl font-extrabold leading-tight tracking-tight text-terminal-green terminal-glow sm:text-6xl lg:text-7xl">
+        Build faster,
+        <br />
+        <span className="text-terminal-green-dim">ship better</span>
       </h1>
 
       {/* Subheadline */}
-      <p className="mt-6 max-w-2xl text-balance text-lg text-slate-600 dark:text-slate-400">
-        The modern platform for teams who want to move fast without breaking
-        things. Designed for developers, built for scale.
+      <p className="mt-6 max-w-2xl text-balance text-lg text-terminal-green-dim">
+        <span className="text-terminal-green">&gt;</span> The modern platform
+        for teams who want to move fast without breaking things. Designed for
+        developers, built for scale.
       </p>
 
       {/* Actions */}
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
         <Link
           href="#cta"
-          className="rounded-full bg-sky-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-sky-500/30 transition-all hover:bg-sky-600 hover:shadow-sky-600/30"
+          className="rounded border border-terminal-green bg-terminal-green px-6 py-3 text-base font-semibold text-terminal-bg shadow-lg shadow-terminal-green/20 transition-all hover:bg-terminal-green-dim hover:shadow-terminal-green/30"
         >
-          Start for free
+          $ ./start-free.sh
         </Link>
         <Link
           href="#features"
-          className="rounded-full border border-slate-200 bg-white px-6 py-3 text-base font-semibold text-slate-700 transition-all hover:border-slate-300 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+          className="rounded border border-terminal-green-muted px-6 py-3 text-base font-semibold text-terminal-green-dim transition-all hover:border-terminal-green hover:text-terminal-green border-glow"
         >
-          See how it works
+          --help
         </Link>
       </div>
 
       {/* Social proof */}
-      <p className="mt-12 text-sm text-slate-500 dark:text-slate-500">
+      <p className="mt-12 text-sm text-terminal-green-muted">
         Trusted by{" "}
-        <span className="font-semibold text-slate-900 dark:text-white">
-          2,000+
-        </span>{" "}
+        <span className="text-terminal-green terminal-glow-sm">2,000+</span>{" "}
         teams worldwide
       </p>
     </section>

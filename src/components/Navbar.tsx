@@ -8,14 +8,15 @@ const navLinks = [
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md dark:border-slate-800/80 dark:bg-slate-950/80">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-terminal-border bg-terminal-bg/90 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link
           href="/"
-          className="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
+          className="text-xl font-bold tracking-tight text-terminal-green terminal-glow"
         >
-          My<span className="text-sky-500">App</span>
+          &gt; My<span className="text-terminal-green-dim">App</span>
+          <span className="ml-0.5 inline-block h-4 w-2 animate-pulse bg-terminal-green" />
         </Link>
 
         {/* Links */}
@@ -24,7 +25,7 @@ export function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                className="text-sm font-medium text-terminal-green-dim transition-all hover:text-terminal-green hover:terminal-glow-sm"
               >
                 {link.label}
               </Link>
@@ -36,15 +37,15 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="#"
-            className="hidden text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white md:block"
+            className="hidden text-sm font-medium text-terminal-green-dim hover:text-terminal-green md:block"
           >
-            Sign in
+            ./sign-in
           </Link>
           <Link
             href="#cta"
-            className="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
+            className="rounded border border-terminal-green px-4 py-1.5 text-sm font-semibold text-terminal-green transition-all hover:bg-terminal-green hover:text-terminal-bg border-glow"
           >
-            Get started
+            $ get-started
           </Link>
         </div>
       </nav>

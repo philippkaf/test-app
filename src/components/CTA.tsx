@@ -3,11 +3,21 @@
 export function CTA() {
   return (
     <section id="cta" className="px-6 py-24 sm:py-32">
-      <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-sky-500 to-blue-600 p-12 text-center shadow-2xl shadow-sky-500/20">
-        <h2 className="text-balance text-4xl font-bold tracking-tight text-white sm:text-5xl">
+      <div className="mx-auto max-w-4xl rounded border border-terminal-green bg-terminal-surface p-12 text-center border-glow">
+        {/* Terminal window chrome */}
+        <div className="mb-8 flex items-center gap-2">
+          <div className="size-3 rounded-full bg-red-500/70" />
+          <div className="size-3 rounded-full bg-yellow-500/70" />
+          <div className="size-3 rounded-full bg-terminal-green/70" />
+          <span className="ml-2 text-xs text-terminal-green-dim">
+            ~/myapp — bash
+          </span>
+        </div>
+
+        <h2 className="text-balance text-4xl font-bold tracking-tight text-terminal-green terminal-glow sm:text-5xl">
           Ready to ship faster?
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-sky-100">
+        <p className="mx-auto mt-4 max-w-xl text-lg text-terminal-green-dim">
           Start for free, no credit card required. Upgrade when you&apos;re
           ready. Cancel any time.
         </p>
@@ -18,20 +28,20 @@ export function CTA() {
         >
           <input
             type="email"
-            placeholder="Enter your work email"
+            placeholder="user@company.com"
             required
-            className="flex-1 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm text-white placeholder-sky-200 outline-none backdrop-blur focus:border-white/40 focus:ring-2 focus:ring-white/30"
+            className="flex-1 rounded border border-terminal-green-muted bg-terminal-bg px-5 py-3 text-sm text-terminal-green placeholder-terminal-green-muted outline-none transition-all focus:border-terminal-green focus:ring-1 focus:ring-terminal-green/30"
           />
           <button
             type="submit"
-            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-sky-600 shadow-md transition-all hover:bg-sky-50 hover:shadow-lg"
+            className="rounded border border-terminal-green bg-terminal-green px-6 py-3 text-sm font-semibold text-terminal-bg shadow-md shadow-terminal-green/20 transition-all hover:bg-terminal-green-dim hover:shadow-terminal-green/30"
           >
-            Get started free
+            $ ./run
           </button>
         </form>
 
-        <p className="mt-4 text-xs text-sky-200">
-          Free plan includes 3 projects · No credit card required
+        <p className="mt-4 text-xs text-terminal-green-muted">
+          Free plan: 3 projects · No credit card · OSS-friendly
         </p>
       </div>
     </section>

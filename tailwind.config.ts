@@ -9,17 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: "#f0f9ff",
-          100: "#e0f2fe",
-          500: "#0ea5e9",
-          600: "#0284c7",
-          700: "#0369a1",
-          900: "#0c4a6e",
+        terminal: {
+          bg: "#020c02",
+          surface: "#071207",
+          border: "#0d2b0d",
+          green: "#00ff41",
+          "green-dim": "#00cc33",
+          "green-muted": "#1a5c1a",
+          "green-faint": "#0a2e0a",
+          amber: "#ffb700",
         },
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-geist-mono)", "monospace"],
         mono: ["var(--font-geist-mono)", "monospace"],
       },
     },

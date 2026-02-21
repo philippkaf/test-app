@@ -31,21 +31,23 @@ const testimonials: TestimonialItem[] = [
 
 function TestimonialCard({ quote, name, role, avatar }: TestimonialItem) {
   return (
-    <figure className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+    <figure className="flex flex-col justify-between rounded border border-terminal-border bg-terminal-surface p-6 transition-all hover:border-terminal-green hover:border-glow">
       <blockquote>
-        <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-          &ldquo;{quote}&rdquo;
+        <p className="text-sm leading-relaxed text-terminal-green-dim">
+          <span className="text-terminal-green">&ldquo;</span>
+          {quote}
+          <span className="text-terminal-green">&rdquo;</span>
         </p>
       </blockquote>
       <figcaption className="mt-6 flex items-center gap-3">
-        <div className="flex size-10 items-center justify-center rounded-full bg-sky-100 text-xs font-bold text-sky-700 dark:bg-sky-900 dark:text-sky-300">
+        <div className="flex size-10 items-center justify-center rounded border border-terminal-green-muted bg-terminal-green-faint text-xs font-bold text-terminal-green terminal-glow-sm">
           {avatar}
         </div>
         <div>
-          <p className="text-sm font-semibold text-slate-900 dark:text-white">
+          <p className="text-sm font-semibold text-terminal-green">
             {name}
           </p>
-          <p className="text-xs text-slate-500 dark:text-slate-400">{role}</p>
+          <p className="text-xs text-terminal-green-dim">{role}</p>
         </div>
       </figcaption>
     </figure>
@@ -56,14 +58,14 @@ export function Testimonial() {
   return (
     <section
       id="testimonials"
-      className="bg-slate-50 px-6 py-24 dark:bg-slate-900/50 sm:py-32"
+      className="border-y border-terminal-border bg-terminal-surface px-6 py-24 sm:py-32"
     >
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-sky-500">
-            Testimonials
+          <p className="mb-3 font-mono text-sm uppercase tracking-widest text-terminal-green terminal-glow-sm">
+            // testimonials
           </p>
-          <h2 className="text-balance text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
+          <h2 className="text-balance text-4xl font-bold tracking-tight text-terminal-green terminal-glow sm:text-5xl">
             Loved by engineering teams
           </h2>
         </div>

@@ -45,14 +45,14 @@ const features: Feature[] = [
 
 function FeatureCard({ icon, title, description }: Feature) {
   return (
-    <div className="group rounded-2xl border border-slate-200 bg-white p-6 transition-shadow hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
-      <div className="mb-4 flex size-12 items-center justify-center rounded-xl bg-slate-100 text-2xl dark:bg-slate-800">
+    <div className="group rounded border border-terminal-border bg-terminal-surface p-6 transition-all hover:border-terminal-green hover:border-glow">
+      <div className="mb-4 flex size-12 items-center justify-center rounded border border-terminal-green-muted bg-terminal-green-faint text-2xl">
         {icon}
       </div>
-      <h3 className="mb-2 text-base font-semibold text-slate-900 dark:text-white">
+      <h3 className="mb-2 text-base font-semibold text-terminal-green terminal-glow-sm">
         {title}
       </h3>
-      <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      <p className="text-sm leading-relaxed text-terminal-green-dim">
         {description}
       </p>
     </div>
@@ -61,19 +61,16 @@ function FeatureCard({ icon, title, description }: Feature) {
 
 export function Features() {
   return (
-    <section
-      id="features"
-      className="mx-auto max-w-6xl px-6 py-24 sm:py-32"
-    >
+    <section id="features" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
       {/* Section header */}
       <div className="mb-16 text-center">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-sky-500">
-          Features
+        <p className="mb-3 font-mono text-sm uppercase tracking-widest text-terminal-green terminal-glow-sm">
+          // features
         </p>
-        <h2 className="text-balance text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
+        <h2 className="text-balance text-4xl font-bold tracking-tight text-terminal-green terminal-glow sm:text-5xl">
           Everything you need to ship
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-slate-600 dark:text-slate-400">
+        <p className="mx-auto mt-4 max-w-xl text-lg text-terminal-green-dim">
           No fluff, no bloat. Just the tools that actually move the needle.
         </p>
       </div>
